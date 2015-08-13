@@ -16,7 +16,30 @@ if let dict = NSJSONSerialization.JSONObjectWithData(connectionsession.connected
 }            
 ```
 みたいな書き方はダメで、
-
+```
+do {
+            
+            
+            let dict = try NSJSONSerialization.JSONObjectWithData(connectionsession.connectedData!, options:NSJSONReadingOptions.AllowFragments) as? NSDictionary
+            
+            let responseData:NSArray = dict!["results"] as! NSArray
+            if responseData.count > 0{
+                
+                let version_key:String = "version"
+                
+                let version_dic:NSDictionary = responseData[0] as! NSDictionary
+                
+                if let latest = version_dic[version_key] as? String{
+                    self.latest_str = latest
+                }
+            }
+            
+        } catch let error as NSError {
+            // Handle any errors
+            print(error)
+        }
+```
+はOK
 
 ### reference
 * https://www.bignerdranch.com/blog/error-handling-in-swift-2/
@@ -35,7 +58,9 @@ Cannot subscript a value of type 'AnyObject?' with an index of type 'String'
 
 以下はOK
 ```
-let latest:String = responseData[0]["version" as String] as? String
+let version_key:String = "version"
+let version_dic:NSDictionary = responseData[0] as! NSDictionary
+let latest = version_dic[version_key] as? String                
 ```
 
 ## realmの移行
