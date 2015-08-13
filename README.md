@@ -20,3 +20,21 @@ if let dict = NSJSONSerialization.JSONObjectWithData(connectionsession.connected
 
 ### reference
 * https://www.bignerdranch.com/blog/error-handling-in-swift-2/
+* 
+
+## Dictionaryのキー
+
+以下はエラー
+```
+let latest:String = responseData[0]["version"] as? String
+```
+
+```
+Cannot subscript a value of type 'AnyObject?' with an index of type 'String'
+```
+
+以下はOK
+```
+let latest:String = responseData[0]["version" as String] as? String
+```
+
