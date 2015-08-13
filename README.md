@@ -43,3 +43,25 @@ let latest:String = responseData[0]["version" as String] as? String
 自分でフレームワークをビルドしないといけない(cocoapodsとかcarthageは調べてない)
 http://ja.stackoverflow.com/questions/13165/swift2%E3%81%A7realm%E3%82%92%E4%BD%BF%E3%81%84%E3%81%9F%E3%81%84
 
+## tableviewのreloadcell
+
+以下エラー
+```
+self.menuview.beginUpdates()
+self.menuview.reloadRowsAtIndexPaths(ary_index as [AnyObject], withRowAnimation: UITableViewRowAnimation.None)
+self.menuview.endUpdates()
+```
+
+```
+Cannot invoke 'reloadRowsAtIndexPaths' with an argument list of type '([AnyObject], withRowAnimation: UITableViewRowAnimation)'
+```
+
+
+以下動いたコード
+```
+let reload_ary = indexPaths.copy() as! NSArray
+
+self.workview.beginUpdates()
+self.workview.insertRowsAtIndexPaths(reload_ary as! [NSIndexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+self.workview.endUpdates()
+```
