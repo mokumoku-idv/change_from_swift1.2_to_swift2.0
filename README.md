@@ -38,3 +38,8 @@ Cannot subscript a value of type 'AnyObject?' with an index of type 'String'
 let latest:String = responseData[0]["version" as String] as? String
 ```
 
+## realmの移行
+
+自分でフレームワークをビルドしないといけない(cocoapodsとかcarthageは調べてない)
+http://ja.stackoverflow.com/questions/13165/swift2%E3%81%A7realm%E3%82%92%E4%BD%BF%E3%81%84%E3%81%9F%E3%81%84
+
