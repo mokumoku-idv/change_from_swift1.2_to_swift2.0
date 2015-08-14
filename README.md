@@ -90,6 +90,22 @@ totalStr?.toInt()
 Int(totalStr!)
 ```
 
+## 文字数のカウント
+
+以下はエラー
+```
+count(val_name)
+```
+
+以下は動く
+
+```
+tmpcode.characters.count
+```
+
+### reference
+https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/Swift_Programming_Language/StringsAndCharacters.html#//apple_ref/doc/uid/TP40014097-CH7-ID297
+
 
 ## realmの移行
 
