@@ -134,3 +134,21 @@ self.workview.beginUpdates()
 self.workview.insertRowsAtIndexPaths(reload_ary as! [NSIndexPath], withRowAnimation: UITableViewRowAnimation.Fade)
 self.workview.endUpdates()
 ```
+
+## kvoのメソッドのoverride
+
+swift1.2から変化
+エラー
+```
+override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
+        
+    }  
+```
+
+以下は動く
+```
+override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+        
+    }
+```
+
