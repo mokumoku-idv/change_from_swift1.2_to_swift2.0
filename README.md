@@ -41,6 +41,31 @@ do {
 ```
 はOK
 
+try catchはcatchの中に何も書かないとどのエラータイプにも属さないものを返すっぽい
+```
+do {
+            
+            
+            let realm = try Realm()
+            let items = realm.objects(Favorite).sorted("register_date", ascending: true)
+            
+            if items.count > 50{
+                //ループ回数を取得
+                let loopcount = items.count-50
+                for var i = 0 ; i < loopcount ; i++ {
+                    let fav = items[i] as Favorite
+                    deleteFav(fav,realm:realm)
+                }
+                
+            }
+            
+        } catch{
+            // Handle any errors
+            print("this error is error by creating realm")
+        }
+```
+
+
 ### reference
 * https://www.bignerdranch.com/blog/error-handling-in-swift-2/
 * 
