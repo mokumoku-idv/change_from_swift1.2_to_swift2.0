@@ -63,6 +63,34 @@ let version_dic:NSDictionary = responseData[0] as! NSDictionary
 let latest = version_dic[version_key] as? String                
 ```
 
+```
+//get responseData, feed, entries
+var responseData = dict["ResultSet"] as! NSDictionary
+```
+エラー
+```
+Cannot subscript a value of type 'NSDictionary?' with an index of type 'String'
+```
+
+以下はOK
+```
+let resultset_key:String = "ResultSet"
+let responseData:NSDictionary = (dict?.objectForKey(resultset_key))! as! NSDictionary
+```
+
+## Intのcast
+
+```
+totalStr?.toInt()
+```
+ダメ
+
+以下はOK
+```
+Int(totalStr!)
+```
+
+
 ## realmの移行
 
 自分でフレームワークをビルドしないといけない(cocoapodsとかcarthageは調べてない)
