@@ -132,10 +132,6 @@ tmpcode.characters.count
 https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/Swift_Programming_Language/StringsAndCharacters.html#//apple_ref/doc/uid/TP40014097-CH7-ID297
 
 
-## realmの移行
-
-自分でフレームワークをビルドしないといけない(cocoapodsとかcarthageは調べてない)
-http://ja.stackoverflow.com/questions/13165/swift2%E3%81%A7realm%E3%82%92%E4%BD%BF%E3%81%84%E3%81%9F%E3%81%84
 
 ## tableviewのreloadcell
 
