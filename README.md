@@ -177,3 +177,11 @@ override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObjec
     }
 ```
 
+
+## NSURLSessionがhttpのリクエストを受け付けない
+appleのセキュリティポリシー的な問題で、受け付けないようです。
+httpsで叩いたら、うまくいきました
+
+## BITCODE
+デフォでYesになってるので、とりあえず、NO
+http://stackoverflow.com/questions/30848208/new-warnings-in-ios9
