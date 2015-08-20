@@ -181,3 +181,8 @@ httpsで叩いたら、うまくいきました
 ## BITCODE
 デフォでYesになってるので、とりあえず、NO
 http://stackoverflow.com/questions/30848208/new-warnings-in-ios9
+
+# UITableViewCellが何も表示されない時
+これで解決した
+
+https://forums.developer.apple.com/thread/14003
